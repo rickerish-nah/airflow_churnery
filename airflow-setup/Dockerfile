@@ -72,7 +72,6 @@ RUN set -ex \
         /usr/share/doc-base
 
 
-COPY script/init.sql /docker-entrypoint-initdb.d/
 COPY script/entrypoint.sh /entrypoint.sh
 COPY config/airflow.cfg ${AIRFLOW_USER_HOME}/airflow.cfg
 COPY requirements.txt ${AIRFLOW_USER_HOME}/requirements.txt
