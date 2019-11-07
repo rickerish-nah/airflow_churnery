@@ -14,13 +14,8 @@ services:
             - PGDATA=/var/lib/postgresql/data/pgdata
         volumes:                 
             - ../../airflow-data/postgres:/var/lib/postgresql/data/pgdata
-            # - ./script/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
-    # uncomment initdb if you need initdb at first run 
-    initdb: 
-        build: . 
-        entrypoint: airflow initdb 
-        depends_on: 
-            - postgres
+            - ./script/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
+
     webserver:
         build: .
         restart: always
