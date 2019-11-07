@@ -1,0 +1,3 @@
+CREATE USER cowbell;
+CREATE DATABASE churnery;
+GRANT ALL PRIVILEGES ON DATABASE churnery TO cowbell;
